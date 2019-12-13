@@ -21,7 +21,7 @@ namespace Cas29
         }
 
         [Test]
-        public void SeleniumEasy_InputForms()
+        public void SeleniumEasy_InputForms_Ivica()
         {
             this.log.Store("*** Single Input Field***");
             this.NavigateTo("https://www.seleniumeasy.com/test/basic-first-form-demo.html");
@@ -29,12 +29,11 @@ namespace Cas29
             this.SendKeys("Kako napraviti SS sa Se?", false);
             this.FindElement(By.XPath("//button[contains(text(),'Show Message')]"))?.SendKeys(Keys.Enter);
             IWebElement msg = this.FindElement(By.XPath("//span[@id='display']"));
-            IWebElement checkInput = this.FindElement(By.XPath("//input[@id='user-message']"));
-            Assert.AreEqual(checkInput.GetAttribute("value"), msg.Text);
+            Assert.AreEqual(inputField.GetAttribute("value"), msg.Text);
         }
 
         [Test]
-        public void Vezba1()
+        public void SeleniumEasy_InputForms_Aleksandar()
         {
             this.NavigateTo("https://www.seleniumeasy.com/test/basic-first-form-demo.html");
             string xPath = "//input[@id='user-message']";
@@ -49,7 +48,7 @@ namespace Cas29
         }
 
         [Test]
-        public void Test1()
+        public void SeleniumEasy_InputForms_Filip()
         {
             this.NavigateTo("https://www.seleniumeasy.com/test/basic-first-form-demo.html");
             IWebElement tekstUnos = this.FindElement(By.Id("user-message"));
@@ -58,7 +57,6 @@ namespace Cas29
             IWebElement showMessage = this.FindElement(By.XPath("//button[@onclick='showInput();']"));
             showMessage.Click();
             IWebElement actualMessage = this.FindElement(By.Id("display"));
-
             DoWait(2);
             Assert.AreEqual(actualMessage.Text, "neki tekst");
         }
