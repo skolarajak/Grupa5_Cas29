@@ -86,8 +86,8 @@ namespace Cas29
             }
 
             el.SendKeys(KeysToSend);
-            if (this._wait > 0)
-                this.DoWait();
+//            if (this._wait > 0)
+//                this.DoWait();
             if (SendEnter)
                 el.SendKeys(Keys.Enter);
         }
