@@ -38,6 +38,11 @@ namespace Cas29
             }
         }
 
+        public IWebElement WebElement
+        {
+            get { return this._element; }
+        }
+
         /*
          * Public methods
          */
