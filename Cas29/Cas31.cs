@@ -341,15 +341,14 @@ namespace Cas29
             IWebElement target = this.FindElement(By.Id("box"));
             IWebElement drop1 = this.FindElement(By.Id("image"));
             var action = new Actions(this.Driver);
-            action.DragAndDrop(drop1, target).Perform();
-            /*
+            //action.DragAndDrop(drop1, target).Perform();
             action.ClickAndHold(drop1);
             action.MoveToElement(target);
+            action.MoveByOffset(-150, 0);
             action.Release();
             action.Build();
             action.Perform();
-            */
-            DoWait(2);
+            DoWait(5);
         }
 
         [Test, Category("Cas32")]
